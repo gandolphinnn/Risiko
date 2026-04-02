@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Code Style
 
 - **Indentation:** tabs only, never spaces
+- **SCSS class naming:** no `__` (double underscore); nest child classes with `&` instead of BEM `block__element`
 - **Object alignment:** spaces after `:` are allowed to vertically align values across properties:
   ```typescript
   const obj = {
