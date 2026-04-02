@@ -51,6 +51,11 @@
 							{
 								"glob": "**/*",
 								"input": "public"
+							},
+							{
+								"glob": "Risk_board.svg",
+								"input": "src",
+								"output": "/"
 							}
 						],
 						"styles": [

@@ -6,6 +6,9 @@ dist/
 out-tsc/
 .angular/
 
+# Generated asset copies
+site/src/Risk_board.svg
+
 # TypeScript incremental build info
 *.tsbuildinfo
 

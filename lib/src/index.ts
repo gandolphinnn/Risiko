@@ -1,2 +1,3 @@
-// Shared library barrel export
-// Export shared models, game engine, and playfab client from here
+export type { Territory, Continent, TerritoryId, ContinentId } from './types';
+export { TERRITORIES } from './territories';
+export { CONTINENTS } from './continents';
