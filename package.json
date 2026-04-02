@@ -1,0 +1,12 @@
+{
+  "name": "risiko",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": ["api", "site", "lib"],
+  "scripts": {
+    "start:site": "npm run start -w site",
+    "start:api": "npm run start:dev -w api",
+    "build:site": "npm run build -w site",
+    "build:api": "npm run build -w api"
+  }
+}
