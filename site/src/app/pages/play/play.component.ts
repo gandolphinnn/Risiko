@@ -3,7 +3,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { MapComponent } from '../../components/map/map.component';
-import type { TerritoryId } from '@risiko/lib';
 
 @Component({
 	selector:    'app-play',
@@ -16,8 +15,4 @@ export class PlayComponent {
 	private route = inject(ActivatedRoute);
 
 	gameId = toSignal(this.route.paramMap.pipe(map(p => p.get('game_id'))));
-
-	onTerritoryClick(id: TerritoryId): void {
-		console.log('territory clicked:', id);
-	}
 }

@@ -4,7 +4,7 @@ export const CONTINENTS: Continent[] = [
 	{
 		id:          'north_america',
 		name:        'North America',
-		color:       '#3b82f6',
+		color:       '#ff6600',
 		bonus:       5,
 		territories: [
 			'alaska', 'northwest_territory', 'alberta', 'ontario', 'quebec',
@@ -14,14 +14,14 @@ export const CONTINENTS: Continent[] = [
 	{
 		id:          'south_america',
 		name:        'South America',
-		color:       '#22c55e',
+		color:       '#00a2ff',
 		bonus:       2,
 		territories: ['venezuela', 'brazil', 'peru', 'argentina'],
 	},
 	{
 		id:          'europe',
 		name:        'Europe',
-		color:       '#8b5cf6',
+		color:       '#8900fa',
 		bonus:       5,
 		territories: [
 			'iceland', 'great_britain', 'western_europe', 'northern_europe',
@@ -31,14 +31,14 @@ export const CONTINENTS: Continent[] = [
 	{
 		id:          'africa',
 		name:        'Africa',
-		color:       '#f97316',
+		color:       '#682b00',
 		bonus:       3,
 		territories: ['north_africa', 'egypt', 'east_africa', 'congo', 'south_africa', 'madagascar'],
 	},
 	{
 		id:          'asia',
 		name:        'Asia',
-		color:       '#ef4444',
+		color:       '#00be20',
 		bonus:       7,
 		territories: [
 			'ural', 'siberia', 'yakursk', 'afghanistan', 'china', 'irkutsk',
@@ -48,7 +48,7 @@ export const CONTINENTS: Continent[] = [
 	{
 		id:          'australia',
 		name:        'Australia',
-		color:       '#eab308',
+		color:       '#ff00c8',
 		bonus:       2,
 		territories: ['indonesia', 'new_guinea', 'western_australia', 'eastern_australia'],
 	},

@@ -3,8 +3,12 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./out-tsc/app",
-		"types": []
+		"types": [],
+		"paths": {
+			"@risiko/lib": [
+				"../lib/src/index.ts"
+			]
+		},
 	},
 	"include": [
 		"src/**/*.ts"

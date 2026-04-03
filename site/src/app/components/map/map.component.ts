@@ -1,10 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild, output, inject, viewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CONTINENTS, TERRITORIES } from '@risiko/lib';
-import type { TerritoryId } from '@risiko/lib';
+import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { CONTINENTS, TERRITORIES, TerritoryId } from '@risiko/lib';
 
-const FILL_OPACITY         = '0.55';
-const FILL_OPACITY_HOVER   = '0.85';
+const FILL_OPACITY          = '0.8';
+const FILL_OPACITY_HOVER    = '0.9';
 const FILL_OPACITY_SELECTED = '1';
 
 @Component({
@@ -13,27 +11,30 @@ const FILL_OPACITY_SELECTED = '1';
 	styleUrl:    './map.component.scss',
 	imports:     [],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements AfterViewInit {
 
 	@ViewChild('container', { static: true }) private container!: ElementRef<HTMLDivElement>;
 
-	territoryClick = output<TerritoryId>();
-
-	private http            = inject(HttpClient);
 	private selectedId: TerritoryId | null = null;
 
 	private readonly continentColor = new Map(
 		CONTINENTS.map(c => [c.id, c.color])
 	);
-	private readonly territoryContinent = new Map(
-		TERRITORIES.map(t => [t.id, t.continentId])
-	);
 
-	ngOnInit(): void {
-		this.http.get('/Risk_board.svg', { responseType: 'text' }).subscribe(svg => {
-			this.container.nativeElement.innerHTML = svg;
-			this.initSvg();
-		});
+	ngAfterViewInit(): void {
+		this.initSvg();
+	}
+
+	onSectorClicked(countryCode: TerritoryId): void {
+		if (this.selectedId) {
+			const prev = this.container.nativeElement.querySelector<SVGPathElement>(`#${this.selectedId}`);
+			if (prev) prev.style.fillOpacity = FILL_OPACITY;
+		}
+
+		this.selectedId = countryCode;
+
+		const path = this.container.nativeElement.querySelector<SVGPathElement>(`#${countryCode}`);
+		if (path) path.style.fillOpacity = FILL_OPACITY_SELECTED;
 	}
 
 	private initSvg(): void {
@@ -54,26 +55,9 @@ export class MapComponent implements OnInit {
 			path.style.cursor      = 'pointer';
 			path.style.transition  = 'fill-opacity 0.15s';
 
-			path.addEventListener('mouseenter', () => {
-				if (territory.id !== this.selectedId)
-					path.style.fillOpacity = FILL_OPACITY_HOVER;
-			});
-			path.addEventListener('mouseleave', () => {
-				if (territory.id !== this.selectedId)
-					path.style.fillOpacity = FILL_OPACITY;
-			});
-			path.addEventListener('click', () => this.onTerritoryClick(territory.id, path));
+			path.addEventListener('mouseenter', () => { if (territory.id !== this.selectedId) path.style.fillOpacity = FILL_OPACITY_HOVER; });
+			path.addEventListener('mouseleave', () => { if (territory.id !== this.selectedId) path.style.fillOpacity = FILL_OPACITY; });
+			path.addEventListener('click',      () => this.onSectorClicked(territory.id));
 		}
-	}
-
-	private onTerritoryClick(id: TerritoryId, path: SVGPathElement): void {
-		if (this.selectedId) {
-			const prev = this.container.nativeElement.querySelector<SVGPathElement>(`#${this.selectedId}`);
-			if (prev) prev.style.fillOpacity = FILL_OPACITY;
-		}
-
-		this.selectedId            = id;
-		path.style.fillOpacity     = FILL_OPACITY_SELECTED;
-		this.territoryClick.emit(id);
 	}
 }
