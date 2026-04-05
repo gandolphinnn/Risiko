@@ -1,4 +1,4 @@
-import type { Continent } from './types';
+import type { Continent } from '../types';
 
 export const CONTINENTS: Continent[] = [
 	{
@@ -14,7 +14,7 @@ export const CONTINENTS: Continent[] = [
 	{
 		id:          'south_america',
 		name:        'South America',
-		color:       '#00a2ff',
+		color:       '#3d27a1',
 		bonus:       2,
 		territories: ['venezuela', 'brazil', 'peru', 'argentina'],
 	},

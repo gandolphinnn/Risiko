@@ -1,0 +1,25 @@
+<div class="modal-header">
+	<h5 class="modal-title">{{ 'NEW_GAME.TITLE' | translate }}</h5>
+	<button type="button" class="btn-close btn-close-white" (click)="activeModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+	<label class="form-label" for="bots-input">{{ 'NEW_GAME.BOTS' | translate }}</label>
+	<input
+		id="bots-input"
+		type="number"
+		class="form-control"
+		[(ngModel)]="bots$"
+		min="2"
+		max="5"
+	/>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">
+		{{ 'NEW_GAME.CANCEL' | translate }}
+	</button>
+	<button type="button" class="btn btn-primary" (click)="close()">
+		{{ 'NEW_GAME.PLAY' | translate }}
+	</button>
+</div>

@@ -1,8 +1,10 @@
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
-import { CONTINENTS, TERRITORIES, TerritoryId } from '@risiko/lib';
+import { CONTINENTS } from 'src/app/services/core/data/continents';
+import { TERRITORIES } from 'src/app/services/core/data/territories';
+import { TerritoryId } from 'src/app/services/core/types';
 
-const FILL_OPACITY          = '0.8';
-const FILL_OPACITY_HOVER    = '0.9';
+const FILL_OPACITY          = '0.6';
+const FILL_OPACITY_HOVER    = '0.8';
 const FILL_OPACITY_SELECTED = '1';
 
 @Component({

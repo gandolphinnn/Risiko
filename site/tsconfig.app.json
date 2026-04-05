@@ -6,7 +6,7 @@
 		"types": [],
 		"paths": {
 			"@risiko/lib": [
-				"../lib/src/index.ts"
+				"../lib/index.ts"
 			]
 		},
 	},

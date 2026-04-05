@@ -4,11 +4,6 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"baseUrl": ".",
-		"paths": {
-			"@risiko/lib": [
-				"../lib/src/index.ts"
-			]
-		},
 		"strict": true,
 		"noImplicitOverride": true,
 		"noPropertyAccessFromIndexSignature": true,

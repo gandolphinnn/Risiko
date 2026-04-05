@@ -1,3 +1,5 @@
+@use 'bootstrap/scss/bootstrap';
+
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
@@ -5,7 +7,7 @@
 }
 
 :root {
-	--color-bg:      #0a0f1e;
+	--color-bg:      #1572ff;
 	--color-surface: #1a2438;
 	--color-border:  #2a3a52;
 	--color-accent:  #c9a84c;

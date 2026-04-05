@@ -1,4 +1,4 @@
-import type { Territory } from './types';
+import type { Territory } from '../types';
 
 export const TERRITORIES: Territory[] = [
 

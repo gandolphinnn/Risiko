@@ -1,0 +1,21 @@
+{
+	"TITLE": "RISIKO",
+	"NEW_GAME": {
+		"TITLE":  "Nuova partita",
+		"BOTS":   "Numero di bot",
+		"CANCEL": "Annulla",
+		"PLAY":   "Gioca"
+	},
+	"OBJECTIVE": {
+		"EXPAND": "Devi controllare 24 territori a tua scelta",
+		"OCCUPY": "Devi occupare 18 territori con almeno 2 truppe su ciascuno di essi",
+		"KILL": {
+			"BLACK":  "Uccidi il Nero",
+			"BLUE":   "Uccidi il Blu",
+			"GREEN":  "Uccidi il Verde",
+			"PURPLE": "Uccidi il Viola",
+			"RED":    "Uccidi il Rosso",
+			"YELLOW": "Uccidi il Giallo"
+		}
+	}
+}
