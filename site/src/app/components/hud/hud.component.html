@@ -1,0 +1,16 @@
+<div class="hud">
+	<div class="hud-side hud-side--left">
+		<ng-content select="[slot=left]" />
+	</div>
+
+	<div class="hud-side hud-side--right">
+		<div class="hud-panel">
+			@for (actor of allActors; track actor.uuid) {
+				<div class="hud-panel-row">
+					<span class="hud-panel-color" [style.background]="actor.color"></span>
+					<span class="hud-panel-name">{{ actor.name }}</span>
+				</div>
+			}
+		</div>
+	</div>
+</div>

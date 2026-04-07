@@ -3,12 +3,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { MapComponent } from '../../components/map/map.component';
+import { HudComponent } from 'src/app/components/hud/hud.component';
 
 @Component({
-	selector:    'app-play',
+	selector: 'app-play',
 	templateUrl: './play.component.html',
-	styleUrl:    './play.component.scss',
-	imports:     [MapComponent],
+	styleUrl: './play.component.scss',
+	imports: [MapComponent, HudComponent],
 })
 export class PlayComponent {
 
